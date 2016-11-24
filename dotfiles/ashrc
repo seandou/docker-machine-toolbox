@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# echo "Boot2Docker version $(cat /etc/version), build $(cat /etc/boot2docker)"
-# docker -v
+. /etc/init.d/tc-functions
 
 git_branch() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
