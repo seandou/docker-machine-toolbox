@@ -9,7 +9,7 @@ git_branch() {
 }
 
 # custom PS1
-PS1="\u@\h:\w# \$(git_branch)"
+PS1="[\[\e[32;1m\]\u@\h\[\e[0m\] \w]\\# \$(git_branch)"
 
 # aliases
 alias df='df -h'
