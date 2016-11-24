@@ -1,0 +1,34 @@
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  s = status
+  unstage = reset HEAD --
+  l = log --graph --pretty=format:'%C(yellow)%h%Creset%C(green)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all
+  c = "!f() { git commit -m \"$@\" && git push origin master; }; f"
+  ca = "!f() { git add . -A && git commit -m \"$@\" && git push origin master; }; f"
+
+[core]
+  editor = vi
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan

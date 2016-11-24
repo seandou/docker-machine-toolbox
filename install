@@ -7,10 +7,11 @@ if [ ! -d "/opt/docker-machine-toolbox" ]; then
 fi
 
 echo 'Load config files ...'
-rm -f /opt/motd && ln -s /opt/docker-machine-toolbox/configs/motd /etc/motd
+rm -f /etc/motd && ln -s /opt/docker-machine-toolbox/configs/motd /etc/motd
 rm -f /etc/profile.d/boot2docker.sh && ln -s /opt/docker-machine-toolbox/configs/boot2docker.sh /etc/profile.d/boot2docker.sh
 
-# echo 'Load dotfiles ...'
+echo 'Load dotfiles ...'
+rm -f /root/.gitconfig && ln -s /opt/docker-machine-toolbox/dotfiles/gitconfig /root/.gitconfig
 
 echo 'Load bin files ...'
 rm -f /usr/bin/setip \
