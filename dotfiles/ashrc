@@ -23,3 +23,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 alias r='sudo su -'
+
+if [ -f '/var/lib/boot2docker/docker-machine-postboot/profile' ]; then
+    . /var/lib/boot2docker/docker-machine-postboot/profile
+fi

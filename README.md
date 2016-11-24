@@ -24,3 +24,16 @@ Step 3. Run boot script
 cd /var/lib/boot2docker/docker-machine-toolbox
 ./boot
 ```
+
+Step 4. Customize with docker-machine-postboot
+
+```
+cp /var/lib/boot2docker/docker-machine-toolbox/postboot /var/lib/boot2docker/docker-machine-postboot
+```
+
+Modify the files
+
+```
+vi /var/lib/boot2docker/docker-machine-postboot/postboot
+vi /var/lib/boot2docker/docker-machine-postboot/profile
+```
