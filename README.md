@@ -28,7 +28,7 @@ cd /var/lib/boot2docker/docker-machine-toolbox
 Step 4. Customize with docker-machine-postboot
 
 ```
-cp /var/lib/boot2docker/docker-machine-toolbox/postboot /var/lib/boot2docker/docker-machine-postboot
+cp -a /var/lib/boot2docker/docker-machine-toolbox/postboot /var/lib/boot2docker/docker-machine-postboot
 ```
 
 Modify the files
