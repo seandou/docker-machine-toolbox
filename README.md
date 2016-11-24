@@ -12,15 +12,15 @@ docker-machine ssh default
 sudo su -
 ```
 
-Step 2. Clone this project to `/opt/docker-machine-toolbox` path
+Step 2. Clone this project to `/var/lib/boot2docker/docker-machine-toolbox` path
 
 ```
-git clone -q https://github.com/seandou/docker-machine-toolbox.git /opt/docker-machine-toolbox
+git clone -q https://github.com/seandou/docker-machine-toolbox.git /var/lib/boot2docker/docker-machine-toolbox
 ```
 
-Step 3. Run install script
+Step 3. Run boot script
 
 ```
-cd /opt/docker-machine-toolbox
-./install
+cd /var/lib/boot2docker/docker-machine-toolbox
+./boot
 ```
