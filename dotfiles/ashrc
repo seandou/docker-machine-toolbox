@@ -21,3 +21,5 @@ alias la='ls -la'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+alias r='sudo su -'
