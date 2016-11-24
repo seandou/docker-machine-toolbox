@@ -7,8 +7,8 @@ if [ ! -d "/opt/docker-machine-toolbox" ]; then
 fi
 
 echo 'Load config files ...'
-rm -f /opt/motd && cp /opt/docker-machine-toolbox/configs/motd /opt/motd
-rm -f /etc/profile.d/boot2docker.sh && cp /opt/docker-machine-toolbox/configs/boot2docker.sh /etc/profile.d/boot2docker.sh
+rm -f /opt/motd && ln -s /opt/docker-machine-toolbox/configs/motd /etc/motd
+rm -f /etc/profile.d/boot2docker.sh && ln -s /opt/docker-machine-toolbox/configs/boot2docker.sh /etc/profile.d/boot2docker.sh
 
 # echo 'Load dotfiles ...'
 
