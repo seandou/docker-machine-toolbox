@@ -1,2 +1,16 @@
 #!/bin/sh
 
+ip=$1
+
+sudo rm -f /var/lib/boot2docker/bootsync.sh
+
+echo "#!/bin/sh
+/etc/init.d/services/dhcp stop
+ifconfig eth1 $ip netmask 255.255.255.0 broadcast 192.168.99.255 up
+" | sudo tee -a /var/lib/boot2docker/bootsync.sh >> /dev/null
+
+sudo chmod a+x /var/lib/boot2docker/bootsync.sh
+
+echo "Machine ip is set to: $ip, restart and regenerate certs as follows:"
+echo 'docker-machine restart <machine-name>'
+echo 'docker-machine regenerate-certs -f <machine-name>'
