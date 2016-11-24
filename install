@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ ! -d "/opt/docker-machine-toolbox" ]; then
+    echo 'Can not found directory: /opt/docker-machine-toolbox, install as follows:'
+    echo 'git clone -q https://github.com/seandou/docker-machine-toolbox.git /opt/docker-mach
+ine-toolbox'
+    exit
+fi
+
+echo 'Load config files ...'
+rm -f /opt/motd && ln -s /opt/docker-machine-toolbox/configs/motd /opt/motd
+rm -f /etc/profile.d/boot2docker.sh && ln -s /opt/docker-machine-toolbox/configs/boot2docker.sh /etc/profile.d/boot2docker.sh
+
+# echo 'Load dotfiles ...'
+
+echo 'Load bin files ...'
+rm -f /usr/bin/setip \
+    && chmod 755 /opt/docker-machine-toolbox/bin/setip \
+    && ln -s /opt/docker-machine-toolbox/bin/setip /usr/bin/setip
+
+echo 'Install finished.'
