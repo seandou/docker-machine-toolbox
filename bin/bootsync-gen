@@ -6,6 +6,9 @@ sudo rm -f /var/lib/boot2docker/bootsync.sh
 
 echo "#!/bin/sh
 /var/lib/boot2docker/docker-machine-toolbox/boot
+if [ -f '/var/lib/boot2docker/docker-machine-postboot/postboot' ]; then
+    /var/lib/boot2docker/docker-machine-postboot/postboot
+fi
 /etc/init.d/services/dhcp stop
 ifconfig eth1 $ip netmask 255.255.255.0 broadcast 192.168.99.255 up
 " | sudo tee -a /var/lib/boot2docker/bootsync.sh >> /dev/null
